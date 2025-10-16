@@ -1,0 +1,19 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        def squaredSum(n: int)-> bool:
+            sum = 0
+            while n>0:
+                rem = n%10
+                sum+=rem**2
+                n//=10
+            return sum
+
+    #tortoise and hare alogorithm
+    first = squareSum(n)
+    second = squaredSum(squaredSum(n))
+
+    while(first!=second):
+        first = squaredSum(first)
+        second = squaredSum(squaredSum(second))\
+    return first==1
+        
